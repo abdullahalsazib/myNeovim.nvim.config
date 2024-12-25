@@ -17,6 +17,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
+--require("plugins.cyberdram")
+
+
 
 -- Setup lazy.nvim
 require("lazy").setup({
