@@ -79,13 +79,11 @@ Feel free to modify the configuration to suit your needs. The primary configurat
 ## Screenshots
 
 ### Editor View
-![Editor View](https://example.com/editor-view.png)
+![Editor View](https://github.com/abdullahalsazib/myNeovim.nvim.config/blob/main/refImg/treeimg2.png)
 
 ### File Explorer
-![File Explorer](https://example.com/file-explorer.png)
+![File Explorer](https://github.com/abdullahalsazib/myNeovim.nvim.config/blob/main/refImg/treenvim.png)
 
-### Fuzzy Finder
-![Fuzzy Finder](https://example.com/fuzzy-finder.png)
 
 ## Contributing
 
