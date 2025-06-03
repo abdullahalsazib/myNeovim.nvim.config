@@ -1,36 +1,28 @@
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
-end
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
+require("config.options")
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "#000002" })
 
-vim.opt.rtp:prepend(lazypath)
+-- Greenish Comments
+vim.cmd([[
+        hi Comment guifg=#00a000 gui=italic
+]])
 
-require("vim-options")
---require("plugins.cyberdram")
+-- Optional: Line number customizations
+vim.cmd([[
+        hi LineNr       guifg=#928374
+        hi CursorLineNr guifg=#fabd2f gui=bold
+]])
 
+-- line height-
 
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "#1d2021" })
+-- vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3c3836" })
+-- vim.api.nvim_set_hl(0, "Visual", { bg = "#504945" })
+--
+--
+--
 
--- Setup lazy.nvim
-require("lazy").setup({
-  spec = {
-    -- import your plugins
-    { import = "plugins" },
-    {import = "plugins.lsp" }
-  },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
-  -- automatically check for plugin updates
-  checker = { enabled = true },
-})
+vim.api.nvim_set_hl(0, "Visual", { bg = "#504945" })
